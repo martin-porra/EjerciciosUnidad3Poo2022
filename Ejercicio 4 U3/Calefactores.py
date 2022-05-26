@@ -12,3 +12,5 @@ class Calefactor:
         return self.__Modelo
     def __str__(self):
         pass
+    def menorcosto(self):
+        pass

@@ -1,4 +1,5 @@
 from  ManejadorCalefactores import  ManejaCalefactor
+from Menu import Menu
 if __name__ == '__main__':
     bandera = True
     while bandera == True:
@@ -9,4 +10,5 @@ if __name__ == '__main__':
             print('debe ser un numero entero')
     manejador = ManejaCalefactor(cantidad)
     manejador.cargar()
-    manejador.mostrar()
+    menu = Menu()
+    menu.opcion(manejador)
