@@ -1,9 +1,13 @@
 from zope.interface import Interface
 from zope.interface import implementer
-class interface(Interface):
+
+
+class Icoleccion(Interface):
+
     def insertarElemento(elemento,posicion):
         pass
-    def agregarElemento(elemeto):
+    def agregarElemento(elemento):
         pass
+
     def mostrarElemento(posicion):
         pass

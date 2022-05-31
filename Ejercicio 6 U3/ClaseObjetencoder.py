@@ -1,5 +1,11 @@
 import json
 from pathlib import Path
+from ClaseLista import Lista
+from Manejador import  Manejador
+from ClaseTelevisor  import Televisor
+from ClaseLavaropa import  Lavaropa
+from ClaseHeladera import  Heladera
+from ClaseAparato import  Aparato
 class ObjectEncoder(object):
 
     def decodificarDiccionario(self, d):

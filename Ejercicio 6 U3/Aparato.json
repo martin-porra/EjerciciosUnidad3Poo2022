@@ -9,7 +9,7 @@
                     "color": "Rojo",
                     "pais": "Argentina",
                     "precio": 25000,
-                    "Tipo": "VGA",
+                    "tipo": "VGA",
                     "pulgadas": "50''",
                     "definicion":"HD",
                     "conexion": "True"
@@ -25,7 +25,7 @@
                     "precio": 20000,
                     "capacidad": 50,
                     "freezer": "True",
-                    "ciclica": "False"
+                    "ciclicla": "False"
                 }
             },
             {

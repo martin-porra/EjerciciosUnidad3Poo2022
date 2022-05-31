@@ -27,4 +27,9 @@ class Heladera(Aparato):
             )
         )
         return d
-        
+
+    def ImporteVenta(self):
+        print('a')
+
+    def __str__(self):
+        return str(self.__capacidad)

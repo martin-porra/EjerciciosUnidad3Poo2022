@@ -29,4 +29,8 @@ class Aparato(ABC):
 
     @abstractmethod 
     def ImporteVenta(self):
-        pass    
+        pass
+
+    @abstractmethod
+    def __str__(self):
+        pass
