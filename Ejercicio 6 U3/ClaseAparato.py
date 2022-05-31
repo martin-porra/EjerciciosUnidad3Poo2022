@@ -34,3 +34,7 @@ class Aparato(ABC):
     @abstractmethod
     def __str__(self):
         pass
+
+    @abstractmethod
+    def toJSON(self):
+        pass

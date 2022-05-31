@@ -72,9 +72,8 @@ class Manejador:
      def agregarElemento(self,aparato):
              self.__lista.agregarElemento(aparato)
 
-     def insertarElemento(self,aparato):
-         pos = int(input('Ingresar posicion donde insertara el elemento '))
-         self.__lista.insertarElemento(aparato,pos)
+     def insertarElemento(self,aparato,posicion):
+         self.__lista.insertarElemento(aparato,posicion)
 
      def mostrarElemento(self,posicion):
          self.__lista.mostrarElemento(posicion)
@@ -84,5 +83,16 @@ class Manejador:
          for dato in self.__lista:
              if dato.getmarca().lower() == 'phillips':
                  cont +=1
-         print(cont)
+         print('La cantidad de Aparatos phillips es: {} '.format(cont))
+
+     def marcalavaropas(self):
+         print('Marca de Lavaropas con carga superior:')
+         for dato in self.__lista:
+             if isinstance(dato,Lavaropa):
+                 if dato.getcarga().lower() == 'superior':
+                  print(dato.getmarca())
+
+     def guardarJSON(self):
+         listaJSON = [Aparato.toJSON() for Aparato in self.__lista]
+         return listaJSON
 

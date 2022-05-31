@@ -13,7 +13,10 @@ class Televisor(Aparato):
         self.__tipopantalla = tipo
         self.__pulgadas = pulgadas
         self.__TipoDefinicion = definicion
-        self.__Conexion = conexion
+        if conexion == "True":
+            self.__Conexion = True
+        else:
+            self.__Conexion = False
 
     def toJSON(self):
         d = dict(
@@ -33,7 +36,17 @@ class Televisor(Aparato):
         return d
 
     def ImporteVenta(self):
-        print('a')
+        importe = 0
+        if self.__TipoDefinicion == "SD":
+            importe = (int(self.getprecio()) /100) + int(self.getprecio())
+        elif self.__TipoDefinicion == "HD":
+            importe = ((int(self.getprecio()) *2) / 100) + int(self.getprecio())
+        elif self.__TipoDefinicion == "FULL HD":
+            importe = ((int(self.getprecio()) * 3) / 100) + int(self.getprecio())
+        if self.__Conexion == True:
+            importe +=  ((int(self.getprecio()) * 10) / 100)
+        return  importe
 
     def __str__(self):
-        return  str(self.__Conexion)
+        s = str(self.getmarca()) + '   ' + str(self.getpais()) + '   ' + str(self.ImporteVenta())
+        return s

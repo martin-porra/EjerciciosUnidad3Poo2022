@@ -1,6 +1,3 @@
-from optparse import BadOptionError
-from pydoc import doc
-from pytest import Instance
 from claselista import coleccion
 from claseinvestigador import investigador
 from clasedocenteinvestigador import DocenteInvestigador

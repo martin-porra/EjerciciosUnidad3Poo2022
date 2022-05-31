@@ -13,6 +13,8 @@ class Lavaropa(Aparato):
         self.__velocidad = velocidad
         self.__cantidad = cantidad
         self.__tipocarga = tipocarga
+    def getcarga(self):
+        return self.__tipocarga
 
     def toJSON(self):
         d = dict(
@@ -32,7 +34,13 @@ class Lavaropa(Aparato):
         return d
 
     def ImporteVenta(self):
-        print('a')
+        importe = 0
+        if int(self.__capacidad) <= 5:
+            importe= (int(self.getprecio())/100) + int(self.getprecio())
+        else:
+            importe = ((int(self.getprecio()) * 3) / 100) + int(self.getprecio())
+        return  importe
 
     def __str__(self):
-        return str(self.__capacidad)
+        s = str(self.getmarca())+ '   '+ str(self.getpais()) + '   ' + str(self.ImporteVenta())
+        return s

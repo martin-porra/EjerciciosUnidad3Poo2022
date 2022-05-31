@@ -8,9 +8,15 @@ class Heladera(Aparato):
 
     def __init__(self, marca, modelo, color, pais, precio,capacidad,freezer,ciclicla):
         super().__init__(marca, modelo, color, pais, precio)
-        self.__capacidad = capacidad 
-        self.__freezer = freezer
-        self.__ciclica = ciclicla
+        self.__capacidad = capacidad
+        if freezer == "True":
+            self.__freezer = True
+        else:
+            self.__freezer = False
+        if ciclicla == "True":
+         self.__ciclica = True
+        else:
+            self.__ciclica = False
 
     def toJSON(self):
         d = dict(
@@ -29,7 +35,14 @@ class Heladera(Aparato):
         return d
 
     def ImporteVenta(self):
-        print('a')
-
+        importe = 0
+        if self.__freezer == None:
+            importe = (int(self.getprecio()) /100) + int(self.getprecio())
+        else:
+            importe = ((int(self.getprecio()) *5) / 100) + int(self.getprecio())
+        if self.__ciclica == True:
+            importe += ((int(self.getprecio()) *10) / 100)
+        return importe
     def __str__(self):
-        return str(self.__capacidad)
+        s = str(self.getmarca()) + '   ' + str(self.getpais()) + '   ' + str(self.ImporteVenta())
+        return s
