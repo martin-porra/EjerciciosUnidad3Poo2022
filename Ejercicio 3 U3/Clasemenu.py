@@ -2,6 +2,7 @@ import os
 from ManejadorContrato import  ManejaContratos
 from ManejadorJugador import  ManejadorJugador
 from ManejadorEquipos import  ManejaEquipos
+from ClaseJugador import Jugador
 class Menu:
 
     def __init__(self):
@@ -14,14 +15,17 @@ class Menu:
      print("\t3 - Consultar jugador contratado por dni")
      print("\t4 - Ingresar identificador equipo")
      print("\t5 - Importe por equipo ")
+     print("\t5 - Guardar contrato ")
 
-    def opcion(self,manejadorjugador,manejadorequipo,manejadorcontrato):
+    def opcion(self,manejadorjugador,manejadorequipo,manejadorcontrato,encoder):
      bandera = True
      while bandera == True:
       self.Menu()
       op = input("inserta un numero valor >> ")
       if op == "1":
-       manejadorjugador.crearjugador()
+       #manejadorjugador.crearjugador()
+       jugador = Jugador('martin',43156808,'San Juan','Argentina','2000/12/02')
+       manejadorjugador.agregarJugador(jugador)
       elif op == "2":
        print('Elija un jugador y equipo para generar un contrato')
        manejadorjugador.listar()
@@ -37,5 +41,9 @@ class Menu:
           manejadorcontrato.identificadorequipo()
       elif op == "5":
           manejadorcontrato.identificarnombre()
+      elif op == "6":
+          listaJSON = manejadorcontrato.guardarJSON()
+          encoder.guardarJSONArchivo(listaJSON, 'Contratos.json')
+          print('Archivo guardado')
       else:
        input("No has pulsado ninguna opción correcta...\npulsa una tecla para continuar")

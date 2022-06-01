@@ -1,0 +1,22 @@
+[
+    {
+        "__class__": "contrato",
+        "__atributos__": {
+            "DNI": 43156808,
+            "Nombre_Equipo": "San Lorenzo",
+            "fechainicio": "2022-06-01",
+            "fechafin": "2/2/2021",
+            "pagomensual": "2"
+        }
+    },
+    {
+        "__class__": "contrato",
+        "__atributos__": {
+            "DNI": 43156808,
+            "Nombre_Equipo": "San Lorenzo",
+            "fechainicio": "2022-06-01",
+            "fechafin": "1/2/2024",
+            "pagomensual": "454"
+        }
+    }
+]

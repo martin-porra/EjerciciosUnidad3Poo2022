@@ -19,3 +19,18 @@ class contrato:
         return self.__fechadefin
     def getpago(self):
         return self.__pagoMensual
+    def __str__(self):
+        return str(self.__pagoMensual)
+    def toJSON(self):
+        d = dict(
+            __class__=self.__class__.__name__,
+            __atributos__=dict(
+                DNI=self.__Jugador.getdni(),
+                Nombre_Equipo=self.__Equipo.getnombre(),
+                fechainicio=self.__fechainicio,
+                fechafin=self.__fechadefin,
+                pagomensual=self.__pagoMensual,
+            )
+        )
+        return d
+
