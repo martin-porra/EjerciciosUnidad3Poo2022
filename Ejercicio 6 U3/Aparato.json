@@ -1,19 +1,5 @@
 [
     {
-        "__class__": "Televisor",
-        "__atributos__": {
-            "marca": "LG",
-            "modelo": "2",
-            "color": "ROJO",
-            "pais": "China",
-            "precio": "20000",
-            "tipo": "vga",
-            "pulgadas": "50''",
-            "definicion": "HD",
-            "conexion": false
-        }
-    },
-    {
         "__class__": "Lavaropa",
         "__atributos__": {
             "marca": "Whirpool",
@@ -24,7 +10,7 @@
             "capacidad": 5,
             "velocidad": "600rp",
             "cantidad": 5,
-            "tipocarga": "Frontal"
+            "tipocarga": "superior"
         }
     },
     {

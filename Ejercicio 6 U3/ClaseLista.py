@@ -52,8 +52,9 @@ class Lista:
             i = 0
             encontro = False
             ant = aux
-            if posicion > 0 and posicion <= self.__tope:
-                if i == posicion - 1:
+            if int(posicion) < 0 or int(posicion) > self.__tope:
+                raise IndexError
+            if i == posicion - 1:
                     if aux == None:
                         self.agregarElemento(elemento)
                     else:
@@ -63,7 +64,7 @@ class Lista:
                         self.__comienzo = nodo
                         self.__actual = nodo
                         self.__tope += 1
-                else:
+            else:
                     while aux != None and not encontro:
                         if i == posicion - 1:
                             encontro = True
@@ -76,29 +77,24 @@ class Lista:
                             ant = aux
                             aux = aux.getSiguiente()
                             i += 1
-            else:
-                print('ERROR: posicion ingresada invalida!')
+
 
     def mostrarElemento(self, posicion):
             aux = self.__comienzo
             bandera = True
             i = 1
-            if posicion > 0 and posicion <= self.__tope:
-                while aux != None and bandera:
+            while aux != None and bandera:
                     if posicion  == i:
                         dato = aux.getDato()
                         bandera = False
                     else:
                         aux = aux.getSiguiente()
                         i += 1
-            if bandera == True:
-                print('Posicion no encontrada')
-            else:
-                if isinstance(dato,Televisor):
+            if isinstance(dato,Televisor):
                     print('Es un televisor')
-                elif isinstance(dato,Heladera):
+            elif isinstance(dato,Heladera):
                     print('Es una Heladera')
-                elif isinstance(dato,Lavaropa):
+            elif isinstance(dato,Lavaropa):
                     print('Es un lavaropa')
 
 

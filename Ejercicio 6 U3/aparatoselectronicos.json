@@ -39,7 +39,7 @@
                     "capacidad": 5,
                     "velocidad": "600rp",
                     "cantidad": 3,
-                    "tipocarga": "Frontal"
+                    "tipocarga": "superior"
                 }
             }     
         ]

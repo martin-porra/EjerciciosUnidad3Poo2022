@@ -24,15 +24,27 @@ class Menu:
       self.Menu()
       op = input("inserta un numero valor >> ")
       if op == "1":
-       pos = int(input('Ingresar posicion donde insertara el elemento '))
-       aparato = manejador.crearaparato()
-       manejador.insertarElemento(aparato,pos)
+       band = True
+       while band:
+        try:
+            aparato = manejador.crearaparato()
+            pos = int(input('Ingresar posicion donde insertara el elemento '))
+            manejador.insertarElemento(aparato,pos)
+            band = False
+        except  IndexError:
+            print('La posicion ingresada no existe')
       elif op == "2":
        aparato = manejador.crearaparato()
        manejador.agregarElemento(aparato)
       elif op == "3":
-          posicion = int(input('Ingresar posicion '))
-          manejador.mostrarElemento(posicion)
+          band = True
+          while band:
+            try:
+                posicion = int(input('Ingresar posicion '))
+                manejador.mostrarElemento(posicion)
+                band= False
+            except  UnboundLocalError:
+              print('La posicion ingresada no existe')
       elif op == "4":
           manejador.Aparatosphillips()
       elif op == "5":

@@ -13,6 +13,7 @@ class Manejador:
         self.__lista.agregarAparato(unAparato)
 
      def mostrarDatos(self):
+        print('Marca   Pais   Importe de venta')
         for dato in self.__lista:
             print(dato)
 
@@ -89,7 +90,7 @@ class Manejador:
          print('Marca de Lavaropas con carga superior:')
          for dato in self.__lista:
              if isinstance(dato,Lavaropa):
-                 if dato.getcarga().lower() == 'superior':
+                 if str(dato.getcarga()).lower() == 'superior':
                   print(dato.getmarca())
 
      def guardarJSON(self):
