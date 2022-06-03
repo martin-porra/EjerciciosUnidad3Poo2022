@@ -186,7 +186,6 @@ class manejador:
       op = input()
       if op == '1':
           docente.setporcentajesimple(nuevoPorcentaje)
-          print(docente.getporcentajesimple)
       elif op == '2':
           docente.setporcentajesemi(nuevoPorcentaje)
       elif op == '3':
@@ -211,5 +210,12 @@ class manejador:
               aux = aux.getsiguiente()
                          
       if not bandera:
-          print('Persona no encontrada')            
+          print('Persona no encontrada')
+
+    def modificarPorcentajeporcategoría(self,nuevoPorcentaje):
+            print('1- Categoria 1 a 10')
+            print('2- Categoria 11 a 20')
+            print('3- Categoria 21 a 22')
+            opcion = int(input('Ingrese una opcion: '))
+            apoyo.setPorecentajeCat(opcion, nuevoPorcentaje)
   

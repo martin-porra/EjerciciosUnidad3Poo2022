@@ -36,8 +36,8 @@ class docente(personal):
     def getporcentajesemiexclusivo(cls):
         return cls.porcentajesemiexlusivo
     @classmethod
-    def porcentajeexclusivo(cls):
-        return cls.porcentajeexclusivo
+    def getporcentajeexclusivo(cls):
+        return cls.porcentajesemiexlusivo
     
     @classmethod
     def setporcentajesimple(cls,porcentaje):
@@ -50,13 +50,13 @@ class docente(personal):
         cls.porcentajeexclusivo = porcentaje        
     
     def calcsueldo(self):
-     sueldo = self._basico * (1 + 0.01 * self._antiguedad)
+     sueldo = float(self._basico) * (1.0 + 0.01 * float(self._antiguedad))
      if self._cargo.lower() == 'simple':
-      sueldo += docente.getporcentajesimple() * self._basico
+      sueldo += float(docente.getporcentajesimple()) * float(self._basico)
      elif self._cargo.lower() == 'semiexclusivo':
-      sueldo += docente.getporcentajesemiexclusivo() * self._basico
+      sueldo += float(docente.getporcentajesemiexclusivo()) * float(self._basico)
      else:
-      sueldo += docente.porcentajeexclusivo() * self._basico
+      sueldo += float(docente.getporcentajeexclusivo()) * float(self._basico)
      return round(sueldo, 2)
 
     def toJSON(self):
